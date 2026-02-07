@@ -16,8 +16,8 @@ Lightweight voice-to-text input tool for Linux (Wayland). Press **Super+Shift+V*
 
 ```bash
 # 1. Clone the repo
-git clone <repo-url> ~/Desktop/MATS/voice-input
-cd ~/Desktop/MATS/voice-input
+git clone git@github.com:agatha-duzan/voice-input.git
+cd voice-input
 
 # 2. Install Python dependencies
 pip install -r requirements.txt
@@ -42,7 +42,7 @@ mkdir -p ~/.config/systemd/user/voice-input.service.d
 cat > ~/.config/systemd/user/voice-input.service.d/local.conf <<'EOF'
 [Service]
 ExecStart=
-ExecStart=/bin/bash -c 'source /path/to/your/keys.sh && exec %h/Desktop/MATS/voice-input/run.sh'
+ExecStart=/bin/bash -c 'source /path/to/your/keys.sh && exec /path/to/voice-input/run.sh'
 EOF
 
 # 6. If you use Anaconda (systemd won't find it by default), add this to your
