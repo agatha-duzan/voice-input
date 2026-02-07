@@ -1,0 +1,17 @@
+[Unit]
+Description=Voice-to-text input (Super+Shift+V)
+After=graphical-session.target
+
+[Service]
+Type=simple
+# Set your API key here, or use `systemctl --user edit voice-input` to add an override.
+# Environment=OPENAI_API_KEY=sk-...
+#
+# Anaconda users: uncomment and adjust the line below.
+# Environment=VOICE_INPUT_PYTHON=%h/Anaconda3/bin/python3
+ExecStart=%h/Desktop/MATS/voice-input/run.sh
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target
